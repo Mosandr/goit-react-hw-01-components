@@ -1,16 +1,18 @@
 import React from "react";
+import Container from "./components/Container/Container";
 import Profile from "./components/Profile/Profile";
 import Statistics from "./components/Statistics/Statistics";
-import Friendlist from "./components/FriedsList/FriendList";
+import Friendlist from "./components/FriedsList/FriendsList";
 import Transactions from "./components/Transactions/Transactions";
 
 import user from "./data/user.json";
 import statisticalData from "./data/statistical-data.json";
 import friends from "./data/friends.json";
+import transactions from "./data/transactions.json";
 
 const App = () => {
   return (
-    <>
+    <Container>
       <Profile
         name={user.name}
         tag={user.tag}
@@ -20,8 +22,8 @@ const App = () => {
       />
       <Statistics title="Upload Stats" stats={statisticalData} />
       <Friendlist friendsList={friends} />
-      <Transactions />
-    </>
+      <Transactions items={transactions} />
+    </Container>
   );
 };
 
