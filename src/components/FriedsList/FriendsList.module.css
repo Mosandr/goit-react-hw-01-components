@@ -1,8 +1,15 @@
 .friendsList {
   display: inline-block;
-  min-width: 280px;
+  width: 100%;
   padding: 20px;
   background-color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 480px) {
+  .friendsList {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

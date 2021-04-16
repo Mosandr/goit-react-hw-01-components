@@ -10,6 +10,8 @@ import statisticalData from "./data/statistical-data.json";
 import friends from "./data/friends.json";
 import transactions from "./data/transactions.json";
 
+const summarizedData = summarizeStatistics(statisticalData);
+
 const App = () => {
   return (
     <Container>
@@ -20,7 +22,7 @@ const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics title="Upload Stats" stats={statisticalData} />
+      <Statistics title="Upload Stats" stats={summarizedData} />
       <Friendlist friendsList={friends} />
       <Transactions items={transactions} />
     </Container>
@@ -28,3 +30,22 @@ const App = () => {
 };
 
 export default App;
+
+function summarizeStatistics(data) {
+  const summaryStatistics = data
+    .reduce((acc, item) => {
+      acc.push(item.label);
+      return acc;
+    }, [])
+    .filter((item, index, array) => index === array.indexOf(item))
+    .map((item) => {
+      const stat = { label: item };
+      stat.percentage = data.reduce((acc, it) => {
+        if (it.label === item) return acc + it.percentage;
+        return acc;
+      }, 0);
+      return stat;
+    });
+
+  return summaryStatistics;
+}

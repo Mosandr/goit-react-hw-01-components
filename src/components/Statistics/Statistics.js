@@ -8,7 +8,7 @@ const Statistics = ({ title, stats }) => {
 
       <ul className={styles.statList}>
         {stats.map((stat, index) => (
-          <li key={stat.id} className={styles.item} style={randomBgr(index)}>
+          <li key={stat.label} className={styles.item} style={randomBgr(index)}>
             <span className={styles.label}>{stat.label}</span>
             <span className={styles.percentage}>{stat.percentage + "%"}</span>
           </li>
@@ -26,7 +26,6 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })

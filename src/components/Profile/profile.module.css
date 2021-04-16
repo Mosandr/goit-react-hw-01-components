@@ -13,6 +13,7 @@
 }
 
 .avatar {
+  padding-top: 10px;
   width: 100px;
   height: 100px;
   margin-left: auto;
@@ -73,6 +74,7 @@
 
 @media screen and (min-width: 480px) {
   .avatar {
+    padding-top: 15px;
     width: 150px;
     height: 150px;
   }
@@ -80,6 +82,7 @@
 
 @media screen and (min-width: 768px) {
   .avatar {
+    padding-top: 20px;
     width: 200px;
     height: 200px;
   }

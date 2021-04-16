@@ -37,3 +37,9 @@
   composes: status;
   background-color: red;
 }
+
+@media screen and (min-width: 480px) {
+  .item {
+    flex-basis: calc((100% - 40px) / 2);
+  }
+}
