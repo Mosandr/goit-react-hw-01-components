@@ -1,9 +1,9 @@
 import React from "react";
-import Container from "./components/Container/Container";
-import Profile from "./components/Profile/Profile";
-import Statistics from "./components/Statistics/Statistics";
-import Friendlist from "./components/FriedsList/FriendsList";
-import Transactions from "./components/Transactions/Transactions";
+import Container from "./components/Container";
+import Profile from "./components/Profile";
+import Statistics from "./components/Statistics";
+import Friendlist from "./components/FriedsList";
+import Transactions from "./components/Transactions";
 
 import user from "./data/user.json";
 import statisticalData from "./data/statistical-data.json";
@@ -49,3 +49,14 @@ function summarizeStatistics(data) {
 
   return summaryStatistics;
 }
+
+// function statSum(statisticalData) {
+//   return (statisticalData = Object.values(
+//     statisticalData.reduce((a, c) => {
+//       (
+//         a[c.label] || (a[c.label] = { label: c.label, percentage: 0 })
+//       ).percentage += c.percentage;
+//       return a;
+//     }, {})
+//   ));
+// }
